@@ -2,60 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
-/* @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 
 @layer base {
   :root {
-    --background: 264 60% 4%;
-    --foreground: 264 39% 98%;
-    --muted: 264 23% 6%;
-    --muted-foreground: 264 1% 72%;
-    --popover: 264 60% 5%;
-    --popover-foreground: 264 39% 99%;
-    --card: 264 60% 5%;
-    --card-foreground: 264 39% 99%;
-    --border: 264 5% 12%;
-    --input: 264 5% 12%;
-    --primary: 264 54% 77%;
-    --primary-foreground: 264 54% 17%;
-    --secondary: 264 1% 15%;
-    --secondary-foreground: 264 1% 75%;
-    --accent: 264 1% 15%;
-    --accent-foreground: 264 1% 75%;
-    --destructive: 14 84% 53%;
+    --background: 240 7% 8%;
+    --foreground: 0 0% 78%;
+    --muted: 240 6.31% 13.09%;
+    --muted-foreground: 346.19 8.3% 54.93%;
+    --popover: 240 7% 5%;
+    --popover-foreground: 0 0% 88%;
+    --card: 240 7% 6%;
+    --card-foreground: 0 0% 83%;
+    --border: 240 5.88% 20%;
+    --input: 240 5.88% 20%;
+    --primary: 346.19 64.65% 42.16%;
+    --primary-foreground: 346.15 66.1% 88.43%;
+    --secondary: 240 5.88% 20%;
+    --secondary-foreground: 0 0% 85%;
+    --accent: 240 7% 23%;
+    --accent-foreground: 240 7% 83%;
+    --destructive: 0 84% 49%;
     --destructive-foreground: 0 0% 100%;
-    --ring: 264 54% 77%;
+    --ring: 346.19 64.65% 42.16%;
+    --font-nunito-sans: 'Nunito Sans', sans-serif;
+    --font-geist-sans: 'Geist Sans', sans-serif;
+    --font-geist-mono: 'Geist Mono', monospace;
   }
 }
 
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}

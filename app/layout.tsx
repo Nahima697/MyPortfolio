@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Nunito_Sans} from 'next/font/google';
+import { Header } from "./_components/Header";
+import { PageTransition } from "./_components/PageTransition";
 
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
@@ -36,7 +38,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} "font-sans-h-full bg-background text-foreground" antialiased`}
       >
-        {children}
+        <Header/>
+      <PageTransition> {children}</PageTransition>
+       
       </body>
     </html>
   );
