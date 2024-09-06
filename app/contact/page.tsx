@@ -1,8 +1,10 @@
 import { Contact } from "../_components/Contact";
 
-export const ContactPage = () => {
+ const ContactPage = () => {
 
     return (
         <Contact/> 
     )
 }
+
+export default ContactPage;
