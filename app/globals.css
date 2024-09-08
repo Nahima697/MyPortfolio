@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import "@fontsource/nunito-sans"; 
 
 @layer base {
   :root {
@@ -25,6 +25,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
     --ring: 263.4 70% 50.4%;
+    --font-nunito-sans: 'Nunito Sans', sans-serif;
   }
 
   .h1 {
@@ -32,7 +33,7 @@
   }
 
   .h2 {
-    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold ;
   }
 
   .h3 {

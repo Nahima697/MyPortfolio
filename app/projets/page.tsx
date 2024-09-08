@@ -1,9 +1,10 @@
-import { Projets } from "../_components/Projets";
+import ProjetsComponent from "../_components/ProjetComponent";
 
-const ProjetsPage = () => {
+const Projets = () => {
+ 
   return (
-    <Projets />
+   <ProjetsComponent/>
   );
 };
 
-export default ProjetsPage;
+export default Projets;

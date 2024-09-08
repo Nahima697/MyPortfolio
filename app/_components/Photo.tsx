@@ -14,12 +14,14 @@ export const Photo = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" } }}
           className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+        
         >
           <Image
-            src="/assets/Photo.png"
+            src="/assets/Photo.webp"
             priority
             quality={100}
             fill
+            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
             alt="Nahima Toumi photo"
             className="object-contain"
           />

@@ -5,8 +5,13 @@ const socials = [
     {icon: <FaGithub/>, path:'https://github.com/Nahima697'},
     {icon: <FaLinkedin/>, path:'https://www.linkedin.com/in/developpeur-web-nahima-toumi/'},
 ]
+interface SocialProps {
+    containerStyles?: string;
+    btnStyles?: string;
+    iconStyles?: string;
+  }
 
-export const Social = ({containerStyles,iconStyles}) => {
+export const Social:React.FC<SocialProps> = ({containerStyles="",iconStyles=""}) => {
 
     return (
         <div className ={containerStyles}>

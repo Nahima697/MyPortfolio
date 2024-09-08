@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Nunito_Sans} from 'next/font/google';
 import { Header } from "./_components/Header";
 import PageTransitionEffect from "./PageTransitionEffect";
-
-
-
-const nunitoSans = Nunito_Sans({
-  subsets: ['latin'],
-  variable: '--font-nunito-sans',
-  display: 'swap',
-})
- 
-
+import "@fontsource/nunito-sans"; 
+import "@fontsource/nunito-sans/400.css"; 
+import "@fontsource/nunito-sans/700.css"; 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -38,8 +30,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${nunitoSans.variable} "font-sans-h-full bg-background text-foreground" antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable}    "font-sans-h-full bg-background text-foreground" antialiased`}     
+        style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
         <Header/>
         <PageTransitionEffect>{children}</PageTransitionEffect>;
       </body>
