@@ -1,7 +1,7 @@
-import { Nav } from "./Nav";
+
 import Link from "next/link";
 import { MobileNav } from "./MobileNav";
-import { Button } from "@/components/ui/button";
+import { Nav } from "./Nav";
 
 export const Header = () => {
   return (
@@ -18,8 +18,8 @@ export const Header = () => {
         {/* Desktop Navigation */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
-            <Button className="bg-secondary border border-2 border-primary flex items-center gap-2 px-2 py-2 text-sm">
+           <a href="mailto:nahima.toumi697@gmail.com?subject=Contact%20via%20Portfolio"
+            className="bg-secondary border border-2 border-primary flex items-center gap-2 px-2 py-2 text-sm">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -32,8 +32,7 @@ export const Header = () => {
               >
                 <path d="M3 6l9 6 9-6M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
               </svg>
-            </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Navigation */}
