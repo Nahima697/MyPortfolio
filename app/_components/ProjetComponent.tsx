@@ -15,6 +15,23 @@ import { ProjetSliderBtns } from "./ProjetSliderBtns";
 const projects = [
   {
     num: 1,
+    category: "Fullstack / Application Hybride",
+    title: "ElecBusiness",
+    description: "Application complète de gestion de bornes de recharge pour véhicules électriques. Architecture N-Tier sécurisée (JWT, HttpOnly cookies), gestion complexe des disponibilités (PostgreSQL tsrange) et interface hybride adaptative (Desktop/Mobile).",
+    stack: [
+      { name: "Spring Boot 3" },
+      { name: "Java 21" },
+      { name: "Angular / Ionic" },
+      { name: "PostgreSQL" },
+      { name: "MapLibre" },
+      { name: "Docker CI/CD" }
+    ],
+    image: "/assets/projets/elecBusiness.jpeg", 
+    live: "https://elecbusiness.netlify.app/", 
+    github: "lhttps://github.com/Nahima697/Elec_business_spring"
+  },
+  {
+    num: 2,
     category: "fullstack",
     title: "My Portfolio",
     description: "Ce projet m'a permis de faire de beaux progrès en React et NextJs ainsi qu'en Tailwind. J'espère qu'il vous plait.",
@@ -24,7 +41,7 @@ const projects = [
     github: 'https://github.com/Nahima697/MyPortfolio'
   },
   {
-    num: 2,
+    num: 3,
     category: "fullstack",
     title: "camioAssur",
     description: "J'ai découvert de nouvelles stacks avec ce projet : Docker, MongoDbAtlas et NestJs d'un côté et React de l'autre. Projet très difficile mais qui m'a appris beaucoup",
@@ -34,7 +51,7 @@ const projects = [
     github: 'https://github.com/Nahima697/camioassur'
   },
   {
-    num: 3,
+    num: 4,
     category: "wordpress",
     title: "Lipouta",
     description: "Mon deuxième site Wordpress, avec Elementor et Woocommerce. Je suis en train de le refaire entièrement.Rendez-vous bientôt pour la version 2",
@@ -44,7 +61,7 @@ const projects = [
     github: ''
   },
   {
-    num: 4,
+    num: 5,
     category: "fullstack",
     title: "NftMarketPlace",
     description: "Mon premier site fullstack en autonomie où j'ai pu apprendre et approfondir Angular  Symfony et ApiPlatform ainsi que le déploiement. J'en suis fière même si il y a encore beaucoup de chose à améliorer",
@@ -53,26 +70,7 @@ const projects = [
     live: '/assets/projets/NftMarketPlace.mp4',
     github: 'https://github.com/Nahima697/NftMarketPlaceAngular'
   },
-  {
-    num: 5,
-    category: "fullstack",
-    title: "Nom Secret",
-    description: "Mon projet de stage. Je ne peux malheureusement pas partager mon Code qui en privé, mais je suis fier d'avoir réaliser seul la conception, le développement back-end avec symfony et Apiplatform et le développement front-end avec Angular et Tailwind, où j'ai pu proposer une version 1 à la fin de mes deux mois de stage",
-    stack: [{ name: "Symfony" }, { name: "Apiplatform" }, { name: "Angular" }],
-    image: '/assets/projets/defaut.png',
-    live: '',
-    github: ''
-  },
-  {
-    num: 6,
-    category: "Wordpress",
-    title: "Bobs Burger",
-    description: "Mon premier site internet en Wordpress et Woocommerce. Il marque mon début dans l'apprentissage du développement web, de la réalisation de la maquette avec Figma au développement avec Divi et Woocommerce",
-    stack: [{ name: "Divi" }, { name: "Elementor" }],
-    image: '/assets/projets/bobsburger.png',
-    live: '',
-    github: ''
-  },
+
 ];
 
 const ProjetsComponent = () => {

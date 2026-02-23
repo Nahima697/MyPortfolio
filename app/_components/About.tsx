@@ -7,26 +7,23 @@ const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
 
 const About = () => {
   return (
-    <div className="h-full w-full leading-relaxed mt-12 mb-12"> 
+    <div className="h-full w-full leading-relaxed mt-12 mb-12">
       <div className="flex items-center justify-center p-8">
         <div className="max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-white font-nunito-sans mb-8"> 
+          <h2 className="text-3xl font-bold text-white font-nunito-sans mb-8">
             À Propos de Moi
           </h2>
           <p className="text-lg text-white font-mono mb-6">
-            Bonjour ! Je suis <Code> Nahima Toumi</Code>, développeuse web passionnée et engagée. Après une reconversion professionnelle il y a plus de deux ans, j&apos;ai trouvé ma vocation dans la création de solutions numériques innovantes et utiles.
+            Bonjour ! Je suis <Code>Nahima Toumi</Code>, passionnée par l'ingénierie logicielle et récemment diplômée du titre d&apos;<Code>Architecte Logiciel</Code>. 
           </p>
           <p className="text-lg text-white font-mono mb-6">
-            Mon parcours a été marqué par un véritable coup de foudre pour le développement web, une passion née après une pause dans ma vie professionnelle. Chaque jour, j&apos;ai la chance de transformer des idées en réalité, en concevant et en développant des sites web et des applications qui font la différence.
+            Mon expertise s&apos;étend de la conception de back-ends robustes avec <Code>Java 21</Code> et <Code>Spring Boot 3</Code> jusqu&apos;à la création d'interfaces hybrides modernes avec <Code>Angular</Code> et <Code>Ionic</Code>.
           </p>
           <p className="text-lg text-white font-mono mb-6">
-            J&apos;aime explorer de nouvelles technologies et apprendre constamment. Ce portfolio est construit avec <Code> React </Code> et <Code> Next.js</Code>, mais je suis également adepte <Code>d&apos;Angular</Code>.<br/>
-          </p>
-          <p className="text-lg text-white font-mono mb-6">
-            Je travaille aussi avec <Code> WordPress</Code> pour le front-end et je suis fascinée par la conception et la réalisation d&apos;APIs, notamment avec <Code> Symfony</Code>.
+            Je maîtrise la gestion de bases de données complexes sous <Code>PostgreSQL</Code> (notamment les types avancés comme tsrange) et j&apos;intègre des pratiques <Code>DevOps</Code> avec <Code>Docker</Code> et des pipelines <Code>CI/CD</Code> pour garantir la qualité et la stabilité de mes déploiements.
           </p>
           <p className="text-lg text-white font-mono">
-            Mon objectif est de créer des expériences web exceptionnelles et de contribuer à des projets ambitieux. Si vous cherchez une développeuse dynamique, prête à relever de nouveaux défis, n&apos;hésitez pas à me contacter !
+            Aujourd&apos;hui, je mets mes compétences au service de projets ambitieux, en veillant toujours à respecter les principes <Code>SOLID</Code> et une architecture logicielle propre et scalable.
           </p>
         </div>
       </div>
