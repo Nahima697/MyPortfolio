@@ -18,8 +18,37 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Nahima Toumi Développeuse Web",
-  description: "Développeuse Junior PortFolio",
+  title: "Nahima Toumi | Architecte Logiciel & Développeuse Fullstack",
+  description: "Portfolio de Nahima Toumi, Architecte Logiciel spécialisée en Java, Spring Boot, Angular et React. Découvrez mes projets, mon parcours et mon expertise en conception d'architectures robustes.",
+  keywords: [
+    "Nahima Toumi",
+    "Architecte Logiciel",
+    "Développeuse Fullstack",
+    "Java",
+    "Spring Boot",
+    "Angular",
+    "Next.js",
+    "Développeuse Web",
+    "Portfolio"
+  ],
+  authors: [{ name: "Nahima Toumi" }],
+  creator: "Nahima Toumi",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://ton-lien-vercel.vercel.app", 
+    title: "Nahima Toumi | Architecte Logiciel",
+    description: "Découvrez mon portfolio, mes projets (Spring Boot, Angular, Next.js) et mon parcours d'Architecte Logiciel.",
+    siteName: "Portfolio Nahima Toumi",
+    images: [
+      {
+        url: "https://ton-lien-vercel.vercel.app/assets/projets/portfolio.png", 
+        width: 1200,
+        height: 630,
+        alt: "Portfolio Nahima Toumi",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -37,7 +37,7 @@ export const Photo = () => {
             y="3"
             width="500"
             height="500"
-            stroke="#7D4C9A"
+            stroke="#00ff99"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

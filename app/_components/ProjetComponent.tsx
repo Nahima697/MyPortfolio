@@ -28,7 +28,7 @@ const projects = [
     ],
     image: "/assets/projets/elecBusiness.jpeg", 
     live: "https://elecbusiness.netlify.app/", 
-    github: "lhttps://github.com/Nahima697/Elec_business_spring"
+    github: "https://github.com/Nahima697/Elec_business_spring"
   },
   {
     num: 2,
