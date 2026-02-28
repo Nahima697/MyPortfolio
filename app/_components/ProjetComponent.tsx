@@ -26,7 +26,7 @@ const projects = [
       { name: "MapLibre" },
       { name: "Docker CI/CD" }
     ],
-    image: "/assets/projets/elecBusiness.jpeg", 
+    image: "/assets/projets/elec-business.png", 
     live: "https://elecbusiness.netlify.app/", 
     github: "https://github.com/Nahima697/Elec_business_spring"
   },
@@ -148,18 +148,23 @@ const ProjetsComponent = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
-                    <div className="absolute top-0 bottom-0 left-0 right-0 "></div>
-                    <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-300 ease-in-out">
-                      <Image
-                        src={project.image}
-                        fill
-                        className="object-cover"
-                        alt={project.title}
-                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
+                  <div className="h-[460px] relative group flex justify-center items-center bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl shadow-2xl overflow-hidden">
+
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm rounded-2xl"></div>
+
+                <div className="relative w-[90%] h-[85%] transform group-hover:scale-105 transition-transform duration-500 ease-in-out">
+
+                  <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                    <Image
+                      src={project.image}
+                      fill
+                      className="object-contain"
+                      alt={project.title}
+                      sizes="(max-width: 768px) 90vw, 50vw"
+                    />
                   </div>
+              </div>
+              </div>
                 </SwiperSlide>
               ))}
               <ProjetSliderBtns

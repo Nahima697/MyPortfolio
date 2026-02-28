@@ -12,7 +12,7 @@ const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
 const experiences = [
   {
     company: "Superpictor",
-    role: "Alternance - Concepteur Développeur d'Applications",
+    role: "Stage- Concepteur Développeur d'Applications",
     duration: "Oct 2025- Fév 2026",
     description: "Maintenance et évolution de sites e-commerce. Utilisation de PHP et CMS (PrestaShop). Découverte des méthodes agiles avec Jira pour le suivi des tickets et la gestion de projet en équipe.",
   },
