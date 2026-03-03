@@ -1,261 +1,274 @@
 "use client";
 
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiGlobe } from "react-icons/fi";
+import { DiJava, DiPhp, DiPostgresql, DiReact, DiDocker, DiGit } from "react-icons/di";
 import {
-  DiJava,
-  DiPhp,
-  DiPostgresql,
-  DiMysql,
-  DiReact,
-  DiDocker,
-  DiGit,
-  DiWordpress,
-} from "react-icons/di";
-import {
-  SiSpringboot,
-  SiSymfony,
-  SiNestjs,
-  SiNextdotjs,
-  SiAngular,
-  SiTypescript,
-  SiTailwindcss,
+  SiSpringboot, SiSymfony, SiNestjs, SiNextdotjs,
+  SiAngular, SiTypescript, SiTailwindcss,
 } from "react-icons/si";
-import { FaFigma } from "react-icons/fa";
 
 export default function CVPage() {
+
+  const exportPDF = () => {
+    window.print();
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900 py-10 flex justify-center font-nunito-sans">
+    <>
+      <style>{`
+        @media print {
+          @page {
+            size: A4 portrait;
+            margin: 0;
+          }
+          body * {
+            visibility: hidden;
+          }
+          #cv, #cv * {
+            visibility: visible;
+          }
+          #cv {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 210mm !important;
+            height: 297mm !important;
+            max-width: 210mm !important;
+            max-height: 297mm !important;
+            overflow: hidden !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+          }
+          .no-print {
+            display: none !important;
+          }
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+          }
+        }
+      `}</style>
 
-      {/* FEUILLE */}
-      <div className="w-full max-w-[210mm] bg-[#0F172A] shadow-2xl flex flex-col md:flex-row text-white min-h-[297mm]">
+      <div className="min-h-screen bg-gray-900 py-12 flex flex-col items-center">
 
-        {/* ================= COLONNE GAUCHE ================= */}
-        <div className="w-full md:w-1/3 bg-[#111827] p-8 flex flex-col gap-10 border-r border-white/5">
-
-          {/* PHOTO */}
-          <div className="flex justify-center">
-            <div className="w-36 h-36 rounded-full border-4 border-[#10B981] overflow-hidden shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-              <img
-                src="/assets/photo.png"
-                alt="Nahima Toumi"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-
-          {/* CONTACT */}
-          <div className="space-y-4 text-sm text-gray-300">
-            <h3 className="text-white font-semibold text-base mb-4 border-b border-white/10 pb-2">
-              Contact
-            </h3>
-
-            <div className="flex items-center gap-3">
-              <FiPhone className="text-[#10B981]" />
-              <span>+33 6 88 09 34 50</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiMail className="text-[#10B981]" />
-              <span className="break-all">nahima.toumi697@gmail.com</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiMapPin className="text-[#10B981]" />
-              <span>Givors – Région Lyonnaise</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiGithub className="text-[#10B981]" />
-              <span>github.com/Nahima697</span>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <FiGlobe className="text-[#10B981]" />
-              <span>natomi-portfolio.vercel.app</span>
-            </div>
-          </div>
-
-          {/* STACK */}
-          <div>
-            <h3 className="text-white font-semibold text-base mb-5 border-b border-white/10 pb-2">
-              Stack Technique
-            </h3>
-
-            <div className="flex flex-wrap gap-2">
-
-              {[ 
-                [DiJava, "Java"],
-                [SiSpringboot, "Spring Boot"],
-                [DiPhp, "PHP"],
-                [SiSymfony, "Symfony"],
-                [SiNestjs, "NestJS"],
-                [DiPostgresql, "PostgreSQL"],
-                [DiMysql, "MySQL"],
-                [DiReact, "React"],
-                [SiNextdotjs, "Next.js"],
-                [SiAngular, "Angular"],
-                [SiTypescript, "TypeScript"],
-                [SiTailwindcss, "Tailwind"],
-                [DiDocker, "Docker"],
-                [DiGit, "Git"],
-                [FaFigma, "Figma"],
-                [DiWordpress, "WordPress"],
-              ].map(([Icon, label], i) => (
-                <span
-                  key={i}
-                  className="flex items-center gap-2 bg-gray-800 border border-gray-700 px-3 py-1.5 rounded-lg text-xs hover:border-[#10B981] transition"
-                >
-                  <Icon className="text-[#10B981]" />
-                  {label}
-                </span>
-              ))}
-
-            </div>
-          </div>
-
-          {/* LANGUES */}
-          <div>
-            <h3 className="text-white font-semibold text-base mb-4 border-b border-white/10 pb-2">
-              Langues
-            </h3>
-
-            <div className="text-sm text-gray-300 space-y-2">
-              <div className="flex justify-between">
-                <span>Anglais</span>
-                <span className="text-[#10B981] text-xs">B2</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Français</span>
-                <span className="text-gray-400 text-xs">Natif</span>
-              </div>
-            </div>
-          </div>
-
+        {/* BOUTON */}
+        <div className="no-print mb-8 flex justify-center w-full mt-10">
+          <button
+            onClick={exportPDF}
+            className="bg-[#10B981] text-black font-bold px-8 py-3 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] hover:bg-white hover:shadow-[0_0_25px_rgba(255,255,255,0.8)] transition-all duration-300"
+          >
+            Télécharger mon CV (PDF)
+          </button>
         </div>
 
-        {/* ================= COLONNE DROITE ================= */}
-        <div className="w-full md:w-2/3 p-10 flex flex-col">
+        {/* FEUILLE A4 */}
+        <div
+          id="cv"
+          className="text-white overflow-hidden shadow-2xl"
+          style={{
+            width: "210mm",
+            height: "297mm",
+            minWidth: "210mm",
+            maxWidth: "210mm",
+            minHeight: "297mm",
+            maxHeight: "297mm",
+            display: "flex",
+            flexDirection: "row",
+            background: "#0F172A",
+          }}
+        >
 
-          {/* HEADER */}
-          <div className="mb-10">
-            <h1 className="text-5xl font-extrabold mb-3">
-              Nahima <span className="text-[#10B981]">Toumi</span>
-            </h1>
+          {/* ===== COLONNE GAUCHE ===== */}
+          <div
+            style={{
+              width: "34%",
+              minWidth: "34%",
+              height: "100%",
+              padding: "32px 24px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "28px",
+              boxSizing: "border-box",
+              background: "#111827",
+              borderRight: "1px solid rgba(255,255,255,0.05)",
+            }}
+          >
 
-            <h2 className="text-lg text-gray-400 mb-4">
-              Conceptrice Développeuse d’Applications
-            </h2>
-
-            <p className="text-sm text-gray-400 mb-5 max-w-xl">
-              Architecture backend robuste • Frontend moderne • Solutions métier évolutives
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              <span className="bg-[#10B981]/15 text-[#10B981] px-4 py-1 rounded-full text-xs font-semibold">
-                🎓 Titre CDA Validé
-              </span>
-
-              <span className="bg-gray-800 border border-gray-700 px-4 py-1 rounded-full text-xs">
-                Alternance Master / Freelance
-              </span>
-
-              <span className="bg-gray-800 border border-gray-700 px-4 py-1 rounded-full text-xs">
-                Micro-entreprise Natomi
-              </span>
-            </div>
-          </div>
-
-          {/* PROFIL */}
-          <div className="mb-10">
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Après une reconversion réussie et l’obtention de mon titre CDA,
-              je conçois des applications métier robustes et des architectures évolutives.
-              Je développe également ma micro-entreprise Natomi en parallèle
-              de ma recherche d’alternance pour intégrer un Master.
-            </p>
-          </div>
-
-          {/* EXPÉRIENCES */}
-          <div className="mb-10">
-            <h3 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2">
-              Expériences
-            </h3>
-
-            <div className="space-y-8">
-
-              <div>
-                <h4 className="font-bold text-white">
-                  Fondatrice – Natomi
-                </h4>
-                <p className="text-[#10B981] text-sm mb-2">
-                  2025 – Présent
-                </p>
-                <p className="text-sm text-gray-300">
-                  Développement d’applications métier, conception d’architectures
-                  backend Java/Spring et gestion complète de projets clients.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-white">
-                  Développeuse Web – Superpictor
-                </h4>
-                <p className="text-[#10B981] text-sm mb-2">
-                  2024 – 2025
-                </p>
-                <p className="text-sm text-gray-300">
-                  Développement Symfony/PHP, maintenance e-commerce,
-                  intégration PrestaShop et automatisations ERP.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-white">
-                  Développeuse Web – Pomelo
-                </h4>
-                <p className="text-[#10B981] text-sm mb-2">
-                  2023
-                </p>
-                <p className="text-sm text-gray-300">
-                  API Symfony, frontend Angular, intégration UI Tailwind.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          {/* FORMATIONS */}
-          <div>
-            <h3 className="text-2xl font-bold mb-6 border-b border-white/10 pb-2">
-              Formations
-            </h3>
-
-            <div className="space-y-4 text-sm text-gray-300">
-              <div>
-                <strong className="text-white">
-                  Concepteur Développeur d’Applications (Bac+4)
-                </strong>
-                <div>2025</div>
-              </div>
-
-              <div>
-                <strong className="text-white">
-                  Développeur Web & Web Mobile (Bac+2)
-                </strong>
-                <div>2023</div>
-              </div>
-
-              <div>
-                <strong className="text-white">
-                  DUT GEA
-                </strong>
-                <div>2007</div>
+            {/* PHOTO */}
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{
+                width: "130px", height: "130px", borderRadius: "50%",
+                border: "4px solid #10B981", overflow: "hidden", flexShrink: 0,
+                boxShadow: "0 0 20px rgba(16,185,129,0.3)",
+              }}>
+                <img src="/assets/photo.png" alt="Nahima Toumi"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
               </div>
             </div>
+
+            {/* CONTACT */}
+            <div>
+              <h3 style={{ color: "white", fontWeight: 700, fontSize: "12px", marginBottom: "12px", borderBottom: "1px solid rgba(16,185,129,0.3)", paddingBottom: "6px", textTransform: "uppercase", letterSpacing: "0.12em" }}>
+                Contact
+              </h3>
+              {[
+                { Icon: FiPhone, text: "+33 6 88 09 34 50" },
+                { Icon: FiMail, text: "nahima.toumi697@gmail.com" },
+                { Icon: FiMapPin, text: "Givors – Région Lyonnaise" },
+                { Icon: FiGithub, text: "github.com/Nahima697" },
+                { Icon: FiGlobe, text: "https://nahima-toumi.vercel.app" },
+              ].map(({ Icon, text }) => (
+                <div key={text} style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "10px" }}>
+                  <Icon style={{ color: "#10B981", fontSize: "15px", flexShrink: 0 }} />
+                  <span style={{ color: "#D1D5DB", fontSize: "12px" }}>{text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* STACK */}
+            <div>
+              <h3 style={{ color: "white", fontWeight: 700, fontSize: "12px", marginBottom: "12px", borderBottom: "1px solid rgba(16,185,129,0.3)", paddingBottom: "6px", textTransform: "uppercase", letterSpacing: "0.12em" }}>
+                Stack Tech
+              </h3>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "7px" }}>
+                {[
+                  { Icon: DiJava, label: "Java" },
+                  { Icon: SiSpringboot, label: "Spring Boot" },
+                  { Icon: DiPhp, label: "PHP" },
+                  { Icon: SiSymfony, label: "Symfony" },
+                  { Icon: SiNestjs, label: "NestJS" },
+                  { Icon: DiPostgresql, label: "PostgreSQL" },
+                  { Icon: DiReact, label: "React" },
+                  { Icon: SiNextdotjs, label: "Next.js" },
+                  { Icon: SiAngular, label: "Angular" },
+                  { Icon: SiTypescript, label: "TypeScript" },
+                  { Icon: SiTailwindcss, label: "Tailwind" },
+                  { Icon: DiDocker, label: "Docker" },
+                  { Icon: DiGit, label: "Git" },
+                ].map(({ Icon, label }) => (
+                  <span key={label} style={{
+                    display: "flex", alignItems: "center", gap: "6px",
+                    background: "#1F2937", border: "1px solid #374151",
+                    padding: "5px 10px", borderRadius: "7px", fontSize: "11px", color: "white",
+                  }}>
+                    <Icon style={{ color: "#10B981", fontSize: "13px" }} />
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* LANGUES */}
+            <div>
+              <h3 style={{ color: "white", fontWeight: 700, fontSize: "12px", marginBottom: "12px", borderBottom: "1px solid rgba(16,185,129,0.3)", paddingBottom: "6px", textTransform: "uppercase", letterSpacing: "0.12em" }}>
+                Langues
+              </h3>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+                <span style={{ color: "#D1D5DB", fontSize: "13px" }}>Anglais</span>
+                <span style={{ color: "#10B981", fontSize: "11px", fontWeight: "bold", border: "1px solid rgba(16,185,129,0.5)", padding: "3px 10px", borderRadius: "4px" }}>TOEIC B2</span>
+              </div>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ color: "#D1D5DB", fontSize: "13px" }}>Français</span>
+                <span style={{ color: "#9CA3AF", fontSize: "12px", fontWeight: "bold" }}>Natif</span>
+              </div>
+            </div>
+
           </div>
 
+          {/* ===== COLONNE DROITE ===== */}
+          <div style={{
+            flex: 1,
+            padding: "36px 32px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "24px",
+            height: "100%",
+            boxSizing: "border-box",
+          }}>
+
+            {/* HEADER */}
+            <div>
+              <h1 style={{ fontSize: "38px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em", color: "white", margin: "0 0 6px 0" }}>
+                Nahima <span style={{ color: "#10B981" }}>Toumi</span>
+              </h1>
+              <h2 style={{ fontSize: "13px", color: "#D1D5DB", fontWeight: "bold", textTransform: "uppercase", letterSpacing: "0.12em", margin: "0 0 14px 0" }}>
+                Conceptrice Développeuse d'Applications
+              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                <span style={{ background: "rgba(16,185,129,0.15)", color: "#10B981", border: "1px solid #10B981", padding: "5px 14px", borderRadius: "9999px", fontSize: "12px", fontWeight: "bold" }}>
+                  🎓 Titre CDA Validé (Fév. 2025)
+                </span>
+                <span style={{ background: "#1F2937", color: "#D1D5DB", border: "1px solid #4B5563", padding: "5px 14px", borderRadius: "9999px", fontSize: "12px", fontWeight: 600 }}>
+                  Recherche Alternance Master / Freelance
+                </span>
+              </div>
+            </div>
+
+            {/* PROFIL */}
+            <div>
+              <p style={{ color: "#D1D5DB", fontSize: "13px", lineHeight: "1.8", textAlign: "justify", margin: 0 }}>
+                Après une reconversion réussie et l'obtention officielle de mon titre CDA, je conçois des applications métier robustes et des architectures évolutives. Passionnée par le clean code, j'évolue aussi bien sur des environnements Java/Spring Boot que sur des écosystèmes frontend modernes. Je développe également ma micro-entreprise Natomi en parallèle de ma recherche d'alternance pour intégrer un Master.
+              </p>
+            </div>
+
+            {/* EXPÉRIENCES */}
+            <div>
+              <h3 style={{ fontSize: "15px", fontWeight: "bold", marginBottom: "16px", borderBottom: "2px solid #10B981", paddingBottom: "6px", color: "white", textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 16px 0" }}>
+                Expériences
+              </h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+                {[
+                  {
+                    title: "Fondatrice", company: "Natomi", date: "2026 – Présent",
+                    desc: "Développement d'applications métier, conception d'architectures backend Java/Spring et gestion de projets.",
+                  },
+                  {
+                    title: "Développeuse Web", company: "Superpictor (Stage CDA)", date: "Oct 2025 – Fév. 2026",
+                    desc: "Développement Symfony/PHP, maintenance e-commerce, intégration PrestaShop et automatisations ERP (Dolibarr).",
+                  },
+                  {
+                    title: "Développeuse Web Full Stack", company: "Pomelo", date: "Sept. 2023 – Nov. 2023",
+                    desc: "Création d'API Symfony, frontend Angular, intégration UI Tailwind et sites WordPress/WooCommerce.",
+                  },
+                ].map(({ title, company, date, desc }) => (
+                  <div key={title} style={{ position: "relative", borderLeft: "2px solid rgba(16,185,129,0.4)", paddingLeft: "16px" }}>
+                    <div style={{ position: "absolute", width: "11px", height: "11px", background: "#10B981", borderRadius: "50%", left: "-7px", top: "5px", boxShadow: "0 0 8px rgba(16,185,129,0.8)" }} />
+                    <h4 style={{ fontWeight: "bold", color: "white", fontSize: "14px", margin: "0 0 3px 0" }}>
+                      {title} <span style={{ color: "#9CA3AF", fontWeight: "normal", fontSize: "13px" }}>| {company}</span>
+                    </h4>
+                    <p style={{ color: "#10B981", fontSize: "12px", margin: "0 0 5px 0", fontWeight: 600 }}>{date}</p>
+                    <p style={{ fontSize: "12px", color: "#D1D5DB", lineHeight: "1.6", margin: 0 }}>{desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* FORMATIONS */}
+            <div>
+              <h3 style={{ fontSize: "15px", fontWeight: "bold", marginBottom: "16px", borderBottom: "2px solid #10B981", paddingBottom: "6px", color: "white", textTransform: "uppercase", letterSpacing: "0.1em", margin: "0 0 16px 0" }}>
+                Formations
+              </h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+                {[
+                  { year: "2025", color: "#10B981", title: "Concepteur Développeur d'Applications (Bac+4)", sub: "Architecture logicielle, CI/CD, Java/Spring, Angular." },
+                  { year: "2023", color: "#10B981", title: "Développeur Web & Web Mobile (Bac+2)", sub: null },
+                  { year: "2007", color: "#6B7280", title: "DUT Gestion des Entreprises et Administrations", sub: null },
+                ].map(({ year, color, title, sub }) => (
+                  <div key={year + title} style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                    <div style={{ width: "44px", flexShrink: 0, color, fontWeight: "bold", fontSize: "13px" }}>{year}</div>
+                    <div>
+                      <strong style={{ color: color === "#10B981" ? "white" : "#9CA3AF", fontSize: "13px" }}>{title}</strong>
+                      {sub && <p style={{ color: "#9CA3AF", fontSize: "12px", margin: "3px 0 0 0" }}>{sub}</p>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
