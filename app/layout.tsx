@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://ton-lien-vercel.vercel.app", 
-    title: "Nahima Toumi | Architecte Logiciel",
-    description: "Découvrez mon portfolio, mes projets (Spring Boot, Angular, Next.js) et mon parcours d'Architecte Logiciel.",
+    url: "https://nahima-toumi.vercel.app",
+    title: "Nahima Toumi | Conceptrice Développeuse d'Applications",
+    description: "Découvrez mon portfolio, mes projets (Spring Boot, Angular, Next.js) et mon parcours de Conceptrice Développeuse d'Applications.",
     siteName: "Portfolio Nahima Toumi",
     images: [
       {
-        url: "https://ton-lien-vercel.vercel.app/assets/projets/portfolio.png", 
+        url: "https://nahima-toumi.vercel.app/assets/projets/portfolio.png", 
         width: 1200,
         height: 630,
         alt: "Portfolio Nahima Toumi",
