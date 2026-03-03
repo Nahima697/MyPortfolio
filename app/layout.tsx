@@ -18,7 +18,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Nahima Toumi | Architecte Logiciel & Développeuse Fullstack",
+  title: "Nahima Toumi | Conceptrice Développeuse d'Applications",
   description: "Portfolio de Nahima Toumi, Architecte Logiciel spécialisée en Java, Spring Boot, Angular et React. Découvrez mes projets, mon parcours et mon expertise en conception d'architectures robustes.",
   keywords: [
     "Nahima Toumi",
