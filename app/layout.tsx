@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Portfolio de Nahima Toumi, Architecte Logiciel spécialisée en Java, Spring Boot, Angular et React. Découvrez mes projets, mon parcours et mon expertise en conception d'architectures robustes.",
   keywords: [
     "Nahima Toumi",
-    "Architecte Logiciel",
+    "conceptrice développeuse d'applications",
     "Développeuse Fullstack",
     "Java",
     "Spring Boot",
