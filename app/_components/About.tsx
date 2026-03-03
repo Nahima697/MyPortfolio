@@ -1,141 +1,200 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { ComponentPropsWithoutRef } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ScrollArea } from "@/components/ui/scroll-area";
-
-const Code = ({ className, ...props }: ComponentPropsWithoutRef<"span">) => {
-  return <span className={cn("bg-foreground/20 border-2 border-primary p-1 -m-1", className)} {...props} />;
-};
-
-const experiences = [
-  {
-    company: "Superpictor",
-    role: "Stage- Concepteur Développeur d'Applications",
-    duration: "Oct 2025- Fév 2026",
-    description: "Maintenance et évolution de sites e-commerce. Utilisation de PHP et CMS (PrestaShop). Découverte des méthodes agiles avec Jira pour le suivi des tickets et la gestion de projet en équipe.",
-  },
-  {
-    company: "Pomelo",
-    role: "Stage - Développeuse Web",
-    duration: "Nov-Déc 2023",
-    description: "Développement fullstack d'un projet. Création d'une API avec Symfony et ApiPlatform, et développement de l'interface utilisateur avec Angular et Tailwind CSS.",
-  }
-];
-
-const skills = [
-  { 
-    category: "Backend & Base de Données", 
-    items: ["Java 21", "Spring Boot 3", "PHP", "PostgreSQL","MySql", "Node.js", "Symfony"] 
-  },
-  { 
-    category: "Frontend & Mobile", 
-    items: ["Angular", "Ionic", "React", "Next.js", "Tailwind CSS"] 
-  },
-  { 
-    category: "DevOps & Outils", 
-    items: ["Architecture N-Tier", "Principes SOLID", "Docker", "Git", "Jira", "Postman","Junit-Mockito"] 
-  }
-];
+import { motion } from "framer-motion";
+import {
+  DiJava,
+  DiAngularSimple,
+  DiPostgresql,
+  DiDocker,
+  DiReact,
+} from "react-icons/di";
+import { SiSpringboot, SiNextdotjs, SiTailwindcss } from "react-icons/si";
 
 const About = () => {
+  
+  // ================= COMPOSANT SÉPARATEUR ANIMÉ =================
+  // Ligne en pointillés verts (primary) qui se dessine au scroll
+  const Separator = () => (
+    <motion.hr
+      initial={{ opacity: 0, scaleX: 0 }}
+      whileInView={{ opacity: 1, scaleX: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="border-t-2 border-dashed border-primary/50 my-16 md:my-24 origin-left w-full max-w-4xl"
+    />
+  );
+
   return (
-  <div className="h-full w-full">
-      <div className="container mx-auto">
-          <Tabs defaultValue="about" className="flex flex-col xl:flex-row gap-[60px]">
-          
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6 bg-transparent">
-            <TabsTrigger value="about" className="w-full bg-card data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-lg py-3 rounded-xl transition-all shadow-sm">
-              À propos de moi
-            </TabsTrigger>
-            <TabsTrigger value="experience" className="w-full bg-card data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-lg py-3 rounded-xl transition-all shadow-sm">
-              Expériences Pro
-            </TabsTrigger>
-            <TabsTrigger value="skills" className="w-full bg-card data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-lg py-3 rounded-xl transition-all shadow-sm">
-              Compétences
-            </TabsTrigger>
-          </TabsList>
+    // J'ai enlevé le "space-y-*" ici pour laisser les séparateurs gérer l'espace
+    <section className="w-full font-nunito-sans py-12">
 
-          {/* Contenu à droite */}
-          <div className="w-full">
-            
-            <TabsContent value="about" className="w-full">
-              <div className="max-w-4xl text-center xl:text-left">
-                <h3 className="text-3xl font-bold text-white mb-8">Mon Profil</h3>
-                <div className="flex flex-col gap-6 leading-relaxed">
-                  <p className="text-lg text-white font-mono">
-                    Bonjour ! Je suis <Code>Nahima Toumi</Code>, fraîchement diplômée du titre de <Code>Concepteur Développeur d'Applications</Code> (Bac+4).
-                  </p>
-                  <p className="text-lg text-white font-mono">
-                    Mon année de formation m&apos;a permis de découvrir et de pratiquer activement la conception logicielle. J&apos;ai un attrait particulier pour la création de back-ends avec <Code>Java</Code> et <Code>Spring Boot</Code>, ainsi que le développement d&apos;interfaces avec <Code>Angular</Code> et l&apos;écosystème <Code>React</Code>.
-                  </p>
-                  <p className="text-lg text-white font-mono">
-                    Bien que je sois encore junior, je suis extrêmement <Code>curieuse et motivée</Code>. J&apos;adore apprendre de nouvelles choses, que ce soit modéliser une base de données sous <Code>PostgreSQL</Code> ou m&apos;initier aux bonnes pratiques de conteneurisation avec <Code>Docker</Code>.
-                  </p>
-                  <p className="text-lg text-white font-mono">
-                    Mon objectif aujourd&apos;hui est d&apos;intégrer une équipe bienveillante où je pourrai consolider mes acquis, gagner en autonomie, et apporter mon enthousiasme à vos projets !
-                  </p>
-                </div>
-              </div>
-            </TabsContent>
+      {/* ================= POSITIONNEMENT ================= */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-4xl"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          Mon Positionnement
+        </h2>
 
-            <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-8 text-center xl:text-left mb-8">
-                <h3 className="text-3xl font-bold text-white">Mon Parcours</h3>
-                <ScrollArea className="h-[420px]">
-                  <ul className="grid grid-cols-1 gap-[30px] pr-4">
-                    {experiences.map((exp, index) => (
-                      <li key={index} className="bg-card py-6 px-8 rounded-xl flex flex-col justify-start items-center lg:items-start gap-2 border border-white/10 hover:border-primary/50 transition-all">
-                        <span className="text-primary font-bold">{exp.duration}</span>
-                        <h4 className="text-xl font-semibold text-white">{exp.role}</h4>
-                        <div className="flex items-center gap-3 my-2">
-                          <span className="w-[6px] h-[6px] rounded-full bg-primary"></span>
-                          <p className="text-white/60 uppercase tracking-wider text-sm">{exp.company}</p>
-                        </div>
-                        <p className="text-sm text-white/70 text-center lg:text-left leading-relaxed">
-                          {exp.description}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-              </div>
-            </TabsContent>
+        <div className="space-y-6"> 
+          <p className="text-white/80 text-2xl leading-relaxed"> 
+            Conceptrice Développeuse d’Applications spécialisée en
+            <span className="text-primary font-semibold"> Java / Spring Boot </span>
+            et en développement frontend moderne.
+          </p>
 
-            {/* ONGLET 3 : Tes compétences */}
-            <TabsContent value="skills" className="w-full">
-              <div className="flex flex-col gap-8 text-center xl:text-left">
-                <h3 className="text-3xl font-bold text-white">Mes Compétences</h3>
-                <ScrollArea className="h-[420px]">
-                  <div className="grid grid-cols-1 gap-8 pr-4">
-                    {skills.map((skillGroup, index) => (
-                      <div key={index} className="bg-card p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
-                        <h4 className="text-xl font-semibold mb-6 text-white flex items-center justify-center xl:justify-start gap-3">
-                          <span className="w-2 h-2 rounded-full bg-primary"></span>
-                          {skillGroup.category}
-                        </h4>
-                        <div className="flex flex-wrap justify-center xl:justify-start gap-3">
-                          {skillGroup.items.map((item, idx) => (
-                            <span 
-                              key={idx} 
-                              className="bg-background border border-primary/30 text-white/90 px-4 py-2 rounded-lg text-sm hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </ScrollArea>
-              </div>
-            </TabsContent>
+          <p className="text-white/70 text-xl leading-relaxed"> 
+            Je conçois des applications métier robustes, évolutives
+            et des architectures propres orientées performance.
+          </p>
+        </div>
+      </motion.div>
 
+      <Separator />
+
+      {/* ================= MON PARCOURS ================= */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-4xl"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          Mon Parcours
+        </h2>
+
+        <div className="space-y-4 text-white/70 text-xl leading-relaxed">
+          <p>
+            Après une reconversion professionnelle ambitieuse,
+            j’ai obtenu le titre de 
+            <span className="text-primary font-semibold">
+              {" "}Conceptrice Développeuse d’Applications (Bac+3/4)
+            </span>.
+          </p>
+
+          <p>
+            Cette formation m’a permis de consolider des bases solides
+            en architecture logicielle, backend Java, modélisation de base
+            de données et développement frontend moderne.
+          </p>
+
+          <p>
+            En parallèle, j’ai créé ma 
+            <span className="text-primary font-semibold">
+              {" "}micro-entreprise
+            </span>{" "}
+            afin de développer des projets freelance et
+            construire des solutions métier concrètes.
+          </p>
+
+          <p>
+            Je poursuis aujourd’hui ma montée en expertise et
+            recherche une alternance pour intégrer un Master
+            tout en continuant mes projets entrepreneuriaux.
+          </p>
+        </div>
+      </motion.div>
+
+      <Separator />
+
+      {/* ================= EXPERIENCES ================= */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="max-w-4xl"
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-10">
+          Expériences
+        </h2>
+
+        <div className="space-y-10">
+          <div className="border-l-2 border-primary pl-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary">
+              Superpictor
+            </h3>
+            <p className="text-white/70 text-lg mt-2 leading-relaxed">
+              Stage CDA — Maintenance et évolution e-commerce,
+              environnement PHP / PrestaShop, travail en équipe agile.
+            </p>
           </div>
-        </Tabs>
-      </div>
-    </div>
+
+          <div className="border-l-2 border-primary pl-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary">
+              Pomelo
+            </h3>
+            <p className="text-white/70 text-lg mt-2 leading-relaxed">
+              Développement API Symfony + Front Angular / Tailwind.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      <Separator />
+
+      {/* ================= COMPETENCES ================= */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">
+          Compétences
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+
+          {/* BACKEND */}
+          <div>
+            <h3 className="text-2xl font-bold text-primary mb-8 border-b border-white/10 pb-4 inline-block">
+              Backend & Données
+            </h3>
+
+            <div className="flex flex-wrap gap-8 text-[70px] text-primary">
+              {[DiJava, SiSpringboot, DiPostgresql, DiDocker].map((Icon, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="hover:text-white transition-all duration-300 drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+                >
+                  <Icon />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* FRONTEND */}
+          <div>
+            <h3 className="text-2xl font-bold text-primary mb-8 border-b border-white/10 pb-4 inline-block">
+              Frontend & UI
+            </h3>
+
+            <div className="flex flex-wrap gap-8 text-[70px] text-primary">
+              {[DiAngularSimple, DiReact, SiNextdotjs, SiTailwindcss].map((Icon, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="hover:text-white transition-all duration-300 drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]"
+                >
+                  <Icon />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </motion.div>
+
+    </section>
   );
 };
 

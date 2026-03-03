@@ -1,118 +1,130 @@
 "use client";
 
-import { FiDownload } from 'react-icons/fi';
+import { FiDownload } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { Social } from "./_components/Social";
 import { Photo } from "./_components/Photo";
 import About from "./_components/About";
-import ProjetsComponent from './_components/ProjetComponent';
-import { Contact } from './_components/Contact';
-import { Footer } from './_components/Footer';
+import ProjetsComponent from "./_components/ProjetComponent";
+import { Contact } from "./_components/Contact";
+import { Footer } from "./_components/Footer";
+import GithubGraph from "./_components/GithubGraph";
 
 const Accueil = () => {
   return (
-    <section className="h-full">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+    <section className="min-h-screen pt-24 font-nunito-sans">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ================= HERO SECTION ================= */}
+        <div className="flex flex-col xl:flex-row items-center justify-between gap-16 xl:gap-24">
           
-          {/* --- SECTION TEXTE (Gauche) --- */}
-          <div className="text-center xl:text-left order-2 xl:order-none mt-8 xl:mt-0">
-            <motion.span 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-xl text-primary font-mono tracking-widest uppercase"
-            >
-              Développeuse Fullstack
-            </motion.span>
+          {/* ================= TEXTE ================= */}
+          <div className="max-w-3xl text-center xl:text-left order-2 xl:order-1">
             
-            <motion.h1 
+            {/* Sous-titre Métier */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="h1 mb-6 text-white font-geist-sans mt-4"
+              transition={{ delay: 0.1 }}
+              className="text-primary text-lg md:text-xl font-bold uppercase tracking-[0.2em] mb-4"
             >
-              Hello, je suis <br />
-              <span className="text-primary font-nunito-sans drop-shadow-[0_0_10px_rgba(0,255,153,0.3)]">Nahima Toumi</span>
+              Conceptrice Développeuse d’Applications
+            </motion.div>
+
+            {/* Titre Principal (Nom) */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-6xl md:text-7xl xl:text-[80px] font-black text-white leading-tight"
+            >
+              Nahima <span className="text-primary">Toumi</span>
             </motion.h1>
-            
-            <motion.p 
+
+            {/* Accroche principale */}
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="max-w-[500px] mb-9 text-white/80 font-mono leading-relaxed mx-auto xl:mx-0"
+              transition={{ delay: 0.3 }}
+              className="mt-8 text-white/80 text-2xl md:text-3xl font-light leading-relaxed max-w-2xl mx-auto xl:mx-0"
             >
-              Jeune diplômée (Bac+4) en conception et développement d'applications. Passionnée par l'écosystème Java/Angular, j'ai acquis de solides bases techniques et j'ai hâte de rejoindre une équipe bienveillante pour gagner en autonomie et contribuer à de beaux projets.
+              Je conçois des applications métier robustes et des architectures modernes.
             </motion.p>
-            
+
+            {/* Détails Stack & Objectif */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="flex flex-col xl:flex-row items-center gap-8 mb-12 xl:mb-0"
+              transition={{ delay: 0.35 }}
+              className="mt-8 space-y-3 text-white/70 text-xl md:text-2xl"
             >
-              {/* Bouton CV avec effet Néon au survol */}
+              <p>Backend en <span className="text-white font-medium">Java / Spring Boot</span> et PHP / Symfony</p>
+              <p>Frontend <span className="text-white font-medium">Angular & React / Next.js</span></p>
+              <p className="text-primary font-bold mt-6 inline-block border-b-2 border-primary/30 pb-1">
+                Disponible pour une alternance (Master) ou missions freelance
+              </p>
+            </motion.div>
+
+            {/* Boutons Call-to-Action */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-12 flex flex-col sm:flex-row gap-6 items-center xl:justify-start justify-center"
+            >
               <a
                 href="/assets/CV_Nahima_Toumi.pdf"
                 download
-                className="uppercase flex items-center gap-2 text-primary border-primary border-2 rounded-full px-8 py-3 hover:bg-primary hover:text-background transition-all duration-300 font-bold shadow-[0_0_15px_rgba(0,255,153,0.2)] hover:shadow-[0_0_25px_rgba(0,255,153,0.6)]"
+                className="uppercase flex items-center gap-3 text-primary border-2 border-primary rounded-full px-8 py-4 font-bold text-lg tracking-wider hover:bg-primary hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.5)]"
               >
-                <span>Télécharger mon CV</span>
+                Télécharger mon CV
                 <FiDownload className="text-xl" />
               </a>
-              
-              {/* Réseaux sociaux stylisés */}
-              <div>
+
+              <div className="flex gap-4">
                 <Social
-                  containerStyles="flex gap-6"
-                  iconStyles="w-11 h-11 border-2 border-primary rounded-full flex justify-center items-center text-primary text-lg hover:bg-primary hover:text-background hover:transition-all duration-300 shadow-[0_0_10px_rgba(0,255,153,0.2)] hover:shadow-[0_0_20px_rgba(0,255,153,0.5)]"
+                  containerStyles="flex gap-4"
+                  iconStyles="w-14 h-14 border-2 border-primary rounded-full flex justify-center items-center text-primary text-2xl hover:bg-primary hover:text-black transition-all duration-300"
                 />
               </div>
             </motion.div>
+
           </div>
 
-          {/* --- SECTION PHOTO (Droite) --- */}
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+          {/* ================= PHOTO ================= */}
+          <div className="order-1 xl:order-2 flex justify-center w-full xl:w-auto mt-8 xl:mt-0">
             <Photo />
           </div>
+
+        </div>
+        <div className="mt-20">
+          <GithubGraph />
         </div>
 
-        {/* --- SECTION À PROPOS --- */}
-        <div className="mb-24 mt-12">
+        {/* Espace visuel avant la suite */}
+        <div className="mt-32 border-t border-white/5 ">
+          {/* ================= ABOUT ================= */}
           <About />
         </div>
 
-        {/* --- SECTION PROJETS --- */}
-        <div className="mb-24">
-          <div className="flex flex-col items-center justify-center mb-16">
-            <h2 className="text-4xl font-bold text-white font-nunito-sans mb-4">
-              Mes Projets Récents
-            </h2>
-            {/* Petit trait souligné stylisé */}
-            <div className="w-24 h-1 bg-primary rounded-full shadow-[0_0_10px_rgba(0,255,153,0.5)]"></div>
-          </div>
+        <div className="mt-32 border-t border-white/5 ">
+          {/* ================= PROJETS ================= */}
+          <h2 className="text-5xl md:text-6xl font-black text-white text-center mb-16">
+            Mes Projets
+          </h2>
           <ProjetsComponent />
         </div>
 
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent my-16"></div>
-
-        <div className="mb-24 mt-12">
-          <div className="flex flex-col items-center justify-center mb-12">
-            <h2 className="text-4xl font-bold text-white font-nunito-sans mb-4">
-              Me Contacter
-            </h2>
-            <div className="w-24 h-1 bg-primary rounded-full shadow-[0_0_10px_rgba(0,255,153,0.5)]"></div>
-          </div>
+        <div className="mt-32 border-t border-white/5  mb-32">
+          {/* ================= CONTACT ================= */}
+          <h2 className="text-5xl md:text-6xl font-black text-white text-center mb-16">
+            Me Contacter
+          </h2>
           <Contact />
         </div>
 
-        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
-        
-        <div className="flex justify-center items-center pb-8">
-          <Footer/>
-        </div>
-       
       </div>
+      <Footer />
     </section>
   );
 };

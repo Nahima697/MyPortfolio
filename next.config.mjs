@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+    dangerouslyAllowSVG: true, 
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'github-readme-stats.vercel.app',
+      },
+    ],
+}
+};
 
 export default nextConfig;

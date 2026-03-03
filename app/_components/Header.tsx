@@ -7,7 +7,7 @@ export const Header = () => {
   return (
 <header className="py-4 xl:py-6 text-white sticky top-0 z-50 bg-[#1c1c22]/80 backdrop-blur-md border-b border-white/5">      <div className="container mx-auto flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-xl font-medium font-nunito-sans">
+          <h1 className="text-2xl font-bold tracking-wider">
             <strong className="text-primary font-extrabold px-2 text-2xl">&lt;</strong>
             Nahima
             <strong className="text-primary font-extrabold px-2 text-2xl">/&gt;</strong>
