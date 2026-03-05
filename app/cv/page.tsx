@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FiMail, FiPhone, FiMapPin, FiGithub, FiGlobe } from "react-icons/fi";
 import { DiJava, DiPhp, DiPostgresql, DiReact, DiDocker, DiGit } from "react-icons/di";
 import {
@@ -102,8 +103,15 @@ export default function CVPage() {
                 border: "4px solid #10B981", overflow: "hidden", flexShrink: 0,
                 boxShadow: "0 0 20px rgba(16,185,129,0.3)",
               }}>
-                <img src="/assets/photo.png" alt="Nahima Toumi"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(100%)" }} />
+                <Image 
+                src="/assets/Photo.webp"
+                 priority
+                quality={100}
+                width={130}
+                height={130}
+                alt="Nahima Toumi photo"
+                className="object-cover w-full h-full"
+            />
               </div>
             </div>
 
