@@ -299,10 +299,10 @@ export default function CVPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
                   { year: "2026", color: "#10B981", title: "Master Expert Informatique et SI (Niveau 7)", sub: "EPSI - Titre AFINUM (Admise, rentrée 2026)" },
-                  { year: "03/2025", color: "#10B981", title: "Concepteur Développeur d'Application (Bac +3/4), HumanBooster", sub: null },
-                  { year: "12/2023", color: "#10B981", title: "Développeur Web et Web Mobile (Bac +2) , HumanBooster", sub: null },
-                  { year: "04/2023", color: "#10B981", title: "Initiation à Python & Certification CMS WordPress, Simplon", sub: null },
-                  { year: "2007", color: "#6B7280", title: "DUT Gestion des Entreprises et des Administrations", sub: null },
+                  { year: "03/2025", color: "#10B981", title: "Concepteur Développeur d'Application (Bac +3/4)", sub: "HumanBooster" },
+                  { year: "12/2023", color: "#10B981", title: "Développeur Web et Web Mobile (Bac +2) ", sub: "HumanBooster" },
+                  { year: "04/2023", color: "#10B981", title: "Initiation à Python & Certification CMS WordPress", sub: "Simplon" },
+                  { year: "2007", color: "#6B7280", title: "DUT Gestion des Entreprises et des Administrations", sub: "IUT Jean Monnet, Saint Etienne" },
                 ].map(({ year, color, title, sub }) => (
                   <div key={year + title} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
                     <div style={{ width: "48px", flexShrink: 0, color, fontWeight: "bold", fontSize: "11px" }}>{year}</div>
