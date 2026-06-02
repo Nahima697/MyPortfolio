@@ -19,7 +19,12 @@ const links = [
   {
     name: "Contact",
     path: "/contact",
-  }
+  },
+   {
+    name: "CV",
+    path: "/cv",
+  },
+
 ];
 
 export const Nav = () => {
