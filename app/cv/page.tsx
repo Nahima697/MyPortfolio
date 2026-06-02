@@ -243,6 +243,7 @@ export default function CVPage() {
             <div>
               <p style={{ color: "#D1D5DB", fontSize: "11px", lineHeight: "1.5", textAlign: "justify", margin: 0 }}>
                 Après une reconversion réussie et l'obtention officielle de mon titre CDA, je conçois des applications métier robustes et des architectures évolutives. Passionnée par le clean code, j'évolue aussi bien sur des environnements Java/Spring Boot que sur des écosystèmes frontend modernes.
+                Pour parfaire mes compétences, j'ai récemment été admise en Master Expert Informatique à l'EPSI, avec une spécialisation en Devops. Je suis à la recherche d'une alternance pour continuer à apprendre et contribuer à des projets innovants.(rythme de travail : 2 semaines en entreprise, 1 semaine à l'école)
               </p>
             </div>
 
@@ -298,10 +299,9 @@ export default function CVPage() {
               <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
                   { year: "2026", color: "#10B981", title: "Master Expert Informatique et SI (Niveau 7)", sub: "EPSI - Titre AFINUM (Admise, rentrée 2026)" },
-                  { year: "2026", color: "#10B981", title: "Hackeuse IA", sub: "Simplon" },
-                  { year: "03/2025", color: "#10B981", title: "Concepteur Développeur d'Application (Bac +3/4)", sub: null },
-                  { year: "12/2023", color: "#9CA3AF", title: "Développeur Web et Web Mobile (Bac +2)", sub: null },
-                  { year: "04/2023", color: "#6B7280", title: "Initiation à Python & Certification CMS WordPress", sub: null },
+                  { year: "03/2025", color: "#10B981", title: "Concepteur Développeur d'Application (Bac +3/4), HumanBooster", sub: null },
+                  { year: "12/2023", color: "#10B981", title: "Développeur Web et Web Mobile (Bac +2) , HumanBooster", sub: null },
+                  { year: "04/2023", color: "#10B981", title: "Initiation à Python & Certification CMS WordPress, Simplon", sub: null },
                   { year: "2007", color: "#6B7280", title: "DUT Gestion des Entreprises et des Administrations", sub: null },
                 ].map(({ year, color, title, sub }) => (
                   <div key={year + title} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
