@@ -24,8 +24,23 @@ type Project = {
 };
 
 const projects: Project[] = [
-  {
+    {
     num: 1,
+    category: "Organisation projet sportif et associatif",
+    title: "Tournoi de Football Inter-Quartiers",
+    description:
+      "Création d'un site de présentation et d'inscription pour un tournoi de football local. Le site permet aux équipes de s'inscrire. Conception d'une interface conviviale pour les organisateurs afin de gérer les inscriptions. Gestion de l'évenement, organisation des matchs, de la buvette avec les différents acteurs de la ville de Givors.",
+    stack: [
+      { name: "Next.js 14" },
+      { name: "Tailwind CSS" },
+      { name: "Google Sheets webhooks for form submissions" },
+    ],
+    image: "/assets/projets/flyer3.png",
+    live: "https://tournoi-quartier-givors.vercel.app/",
+    github: "",
+  },
+  {
+    num: 2,
     category: "Freelance / Vitrine Métier",
     title: "Auto-École du Canal",
     description:
@@ -33,16 +48,13 @@ const projects: Project[] = [
     stack: [
       { name: "Next.js 14" },
       { name: "Tailwind CSS" },
-      { name: "Framer Motion" },
-      { name: "Lucide React" },
-      { name: "Netlify Forms" },
     ],
     image: "/assets/projets/auto-ecole.png",
-    live: "https://auto-ecole-du-canal.netlify.app/",
+    live: "https://auto-ecole-canal.vercel.app/",
     github: "",
   },
   {
-    num: 2,
+    num: 3,
     category: "Fullstack / Application Hybride",
     title: "ElecBusiness",
     description:
@@ -69,7 +81,7 @@ const projects: Project[] = [
     github: "https://github.com/Nahima697/Elec_business_spring",
   },
   {
-    num: 3,
+    num: 4,
     category: "Fullstack",
     title: "CamioAssur",
     description:
@@ -85,7 +97,7 @@ const projects: Project[] = [
     github: "https://github.com/Nahima697/camioassur",
   },
   {
-    num: 4,
+    num: 5,
     category: "E-commerce",
     title: "Lipouta",
     description:
@@ -100,7 +112,7 @@ const projects: Project[] = [
     github: "",
   },
   {
-    num: 5,
+    num: 6,
     category: "Fullstack Web3",
     title: "NftMarketPlace",
     description:
