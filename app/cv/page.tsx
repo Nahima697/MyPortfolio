@@ -99,7 +99,7 @@ export default function CVPage() {
             {/* PHOTO */}
             <div style={{ display: "flex", justifyContent: "center" }}>
               <div style={{
-                width: "150px", height: "150px", borderRadius: "50%",
+                width: "200px", height: "200px", borderRadius: "50%",
                 border: "3px solid #10B981", overflow: "hidden", flexShrink: 0,
                 boxShadow: "0 0 15px rgba(16,185,129,0.3)",
               }}>
@@ -107,10 +107,10 @@ export default function CVPage() {
                   src="/assets/Photo.webp"
                   priority
                   quality={100}
-                  width={150}
-                  height={150}
+                  width={200}
+                  height={200}
                   alt="Nahima Toumi photo"
-                  className="object-cover w-full h-full"
+                  className="object-fit: fill object-center w-full h-full"
                 />
               </div>
             </div>
